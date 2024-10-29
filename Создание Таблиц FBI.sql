@@ -58,7 +58,8 @@ unique(depart_id,staff_id)
 
 create table office_staff(
 office_id integer not null REFERENCES  offices,
-staff_id integer not null references staff
+staff_id integer not null references staff,
+unique(office_id , staff_id)
 );
 
 create table position_staff(

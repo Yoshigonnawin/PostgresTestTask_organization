@@ -45,7 +45,8 @@ salary bigint default 2000000 -- в рублях *100
 
 create table department_offices(
 depart_id integer not null REFERENCES  department,
-office_id integer not null references offices
+office_id integer not null references offices,
+unique(depart_id,office_id)
 );
 
 

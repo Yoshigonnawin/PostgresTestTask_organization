@@ -44,3 +44,14 @@ end$$LANGUAGE plpgsql;
 
 
 select * from find_namesakes(3)
+
+--если нужно найти по каждому сотруднику
+
+
+create or replace view find_namesakes_all as 
+select s.id,st.* 
+from staff s 
+join find_namesakes(s.id) st on true
+order by s.id;
+
+select * from find_namesakes_all;

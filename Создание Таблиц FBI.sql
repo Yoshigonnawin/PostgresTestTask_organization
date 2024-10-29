@@ -85,7 +85,7 @@ tag varchar(50)
 
 create table deltas(
 id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-value int2 default -1,
+value int8 default -1,
 object_id bigint not null,
 delta_type_id integer not null references  deltas_type
 );

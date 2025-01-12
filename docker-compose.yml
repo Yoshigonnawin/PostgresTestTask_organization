@@ -12,7 +12,7 @@ services:
       - "5432:5432"
     volumes:
       - fbi-data:/var/lib/postgresql/data/pgdata
-      - ./dump_fbi.sql:/docker-entrypoint-initdb.d/dump_fbi_17_11_24.sql
+      - ./dump_fbi.sql:/docker-entrypoint-initdb.d/dump_fbi.sql
     restart: unless-stopped
 volumes:
   fbi-data:

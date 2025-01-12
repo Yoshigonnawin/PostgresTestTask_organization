@@ -1,16 +1,18 @@
-version: '3.9'
 services:
   psql:
-    build: .
+    # build: .
+    image: postgres:17.0
     container_name: formula_bi_db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: psql123
       POSTGRES_DB: formula_bi
-    command: bash -c "chmod +x /init-db.sh && /init-db.sh"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
     ports:
       - "5432:5432"
+    volumes:
+      - fbi-data:/var/lib/postgresql/data/pgdata
+      - ./dump_fbi.sql:/docker-entrypoint-initdb.d/dump_fbi_17_11_24.sql
     restart: unless-stopped
-
-
-
+volumes:
+  fbi-data:

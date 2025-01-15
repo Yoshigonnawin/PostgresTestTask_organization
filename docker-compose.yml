@@ -1,6 +1,5 @@
 services:
   psql:
-    # build: .
     image: postgres:17.0
     container_name: formula_bi_db
     environment:

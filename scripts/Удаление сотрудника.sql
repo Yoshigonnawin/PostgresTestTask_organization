@@ -1,4 +1,4 @@
-CREATE OR replace FUNCTION delete_staff ( staff_ids bigint[]
+CREATE OR replace FUNCTION delete_staff ( staff_ids int4[]
 ) returns void AS $$
 	declare
     office_id_num record;

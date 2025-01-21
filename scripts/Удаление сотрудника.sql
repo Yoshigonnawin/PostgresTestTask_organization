@@ -13,7 +13,7 @@ CREATE OR replace FUNCTION delete_staff ( staff_ids bigint[]
         loop
             INSERT INTO "server".deltas
             ( value, object_id, delta_type_id)
-            VALUES( office_id_num.num, office_id_num.office_id, 1);
+            VALUES( office_id_num.nums, office_id_num.office_id, 1);
         end loop;
         
         delete from staff_hierarchy sh  

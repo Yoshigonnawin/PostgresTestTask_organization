@@ -24,6 +24,8 @@ CREATE OR replace FUNCTION delete_staff ( staff_ids int4[]
         delete from position_staff ps where ps.staff_id = any(staff_ids);
 
         delete from office_staff os  where os.staff_id = any(staff_ids);
+
+        delete from staff s where s.id = any(staff_ids);
             
         raise notice 'Staff deleted id = %',staff_ids;
      
